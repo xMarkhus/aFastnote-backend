@@ -40,6 +40,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 SIMPLE_JWT = {
@@ -63,6 +64,7 @@ INSTALLED_APPS = [
 
     "rest_framework",
     "corsheaders",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -156,3 +158,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWS_CREDENTIALS = True
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'aFastnote API',
+    'DESCRIPTION': 'API para criação e edição de notas rápidas com uso de autenticação JWT',
+    'VERSION': 'V1',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
