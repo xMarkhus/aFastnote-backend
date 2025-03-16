@@ -24,9 +24,9 @@ class UserSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 "O nome de usuário deve ter pelo menos 8 caracteres.")
         return value
-    
+
     def validate_password(self, value):
-        if not re.search (r"[A-Z]", value):
+        if not re.search(r"[A-Z]", value):
             raise serializers.ValidationError(
                 "A senha deve conter pelo menos uma letra maiúscula.")
         if not re.search(r"\d", value):
@@ -35,12 +35,12 @@ class UserSerializer(serializers.ModelSerializer):
         if not re.search(r"[!@#$%^&*()_+[\]{}|;:,.<>?]", value):
             raise serializers.ValidationError(
                 "A senha deve conter pelo menos um caractere especial.")
-        
+
         return value
-    
+
     def validate(self, attrs):
         if attrs["password"] != attrs["confirm_password"]:
             raise serializers.ValidationError(
                 "As senhas devem ser iguais. Confirme a senha.")
-        
+
         return attrs
