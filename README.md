@@ -25,7 +25,7 @@ O **aFastnote** é uma API projetada para facilitar a criação e gerenciamento 
 
 ### 📥 Clonando o Repositório
 ```sh
-git clone https://github.com/seuusuario/aFastnote-backend.git
+git clone https://github.com/xMarkhus/aFastnote-backend.git
 cd aFastnote-backend
 ```
 
